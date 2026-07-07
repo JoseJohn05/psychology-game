@@ -6,7 +6,7 @@ const GameMenu = () => {
 
   const games = [
     {
-      title: '🎯 Cognitive Bias Challenge',
+      title: '🧠 Cognitive Bias Challenge',
       description: 'Test your decision-making and uncover cognitive biases',
       path: '/cognitive',
       color: 'from-blue-500 to-cyan-500',
@@ -18,16 +18,28 @@ const GameMenu = () => {
       color: 'from-purple-500 to-pink-500',
     },
     {
-      title: '💭 Emotional Intelligence',
+      title: '💬 Emotional Intelligence',
       description: 'Navigate complex social scenarios and improve EQ',
       path: '/emotional',
       color: 'from-red-500 to-orange-500',
     },
     {
-      title: '🔮 Pattern Recognition',
+      title: '🔍 Pattern Recognition',
       description: 'Solve visual and logical patterns under time pressure',
       path: '/pattern',
       color: 'from-green-500 to-emerald-500',
+    },
+    {
+      title: '🎤 Voice Scenario',
+      description: 'Interact with AI characters using voice commands',
+      path: '/voice',
+      color: 'from-indigo-500 to-blue-500',
+    },
+    {
+      title: '🎮 Multiplayer Battle',
+      description: 'Challenge players worldwide in real-time competitions',
+      path: '/multiplayer',
+      color: 'from-yellow-500 to-red-500',
     },
   ]
 
@@ -65,7 +77,7 @@ const GameMenu = () => {
         </motion.div>
 
         <motion.div
-          className="grid md:grid-cols-2 gap-6"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
@@ -90,16 +102,28 @@ const GameMenu = () => {
         </motion.div>
 
         <motion.div
-          className="mt-12 text-center"
+          className="mt-12 grid md:grid-cols-3 gap-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
         >
           <button
             onClick={() => navigate('/')}
-            className="btn-secondary"
+            className="btn-secondary p-4 rounded-lg"
           >
             ← Back to Main Menu
+          </button>
+          <button
+            onClick={() => navigate('/leaderboard')}
+            className="btn-primary p-4 rounded-lg"
+          >
+            🏆 View Leaderboard
+          </button>
+          <button
+            onClick={() => navigate('/profile')}
+            className="btn-secondary p-4 rounded-lg"
+          >
+            📊 View Profile
           </button>
         </motion.div>
       </div>

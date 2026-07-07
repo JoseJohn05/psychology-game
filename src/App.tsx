@@ -6,7 +6,10 @@ import CognitiveChallenge from './games/CognitiveChallenge'
 import MemoryPalace from './games/MemoryPalace'
 import EmotionalIntelligence from './games/EmotionalIntelligence'
 import PatternRecognition from './games/PatternRecognition'
+import VoiceScenario from './games/VoiceScenario'
+import MultiplayerLobby from './pages/MultiplayerLobby'
 import Profile from './pages/Profile'
+import Leaderboard from './pages/Leaderboard'
 
 function App() {
   const [playerStats, setPlayerStats] = useState({
@@ -27,7 +30,10 @@ function App() {
           <Route path="/memory" element={<MemoryPalace playerStats={playerStats} setPlayerStats={setPlayerStats} />} />
           <Route path="/emotional" element={<EmotionalIntelligence playerStats={playerStats} setPlayerStats={setPlayerStats} />} />
           <Route path="/pattern" element={<PatternRecognition playerStats={playerStats} setPlayerStats={setPlayerStats} />} />
+          <Route path="/voice" element={<VoiceScenario playerStats={playerStats} setPlayerStats={setPlayerStats} />} />
+          <Route path="/multiplayer" element={<MultiplayerLobby />} />
           <Route path="/profile" element={<Profile playerStats={playerStats} />} />
+          <Route path="/leaderboard" element={<Leaderboard />} />
         </Routes>
       </div>
     </Router>
